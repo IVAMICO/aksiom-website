@@ -1,0 +1,104 @@
+/* Design tokens mirrored from aksiom_tp/frontend/src/tokens.css — keep in sync with the product. */
+@theme {
+  /* ------------------------------------------------------------
+     1. PRIMITIVES
+     ------------------------------------------------------------ */
+
+  --color-gray-25:  #08090C;
+  --color-gray-50:  #0B0D11;
+  --color-gray-100: #0F1117;
+  --color-gray-200: #13161C;
+  --color-gray-300: #181C24;
+  --color-gray-400: #1F2229;
+  --color-gray-500: #2A2F39;
+  --color-gray-600: #3A4150;
+  --color-gray-700: #5A6170;
+  --color-gray-800: #8B92A0;
+  --color-gray-900: #C8CDD5;
+  --color-gray-950: #E6E8EC;
+
+  --color-blue-50:   #0F1A2A;
+  --color-blue-100:  #142339;
+  --color-blue-300:  #2D5A9E;
+  --color-blue-500:  #5BA1F0;
+  --color-blue-700:  #8FC0F5;
+
+  --color-red-50:    #2A1418;
+  --color-red-100:   #3A1A20;
+  --color-red-300:   #6E2A33;
+  --color-red-500:   #E87878;
+  --color-red-700:   #F0A0A0;
+
+  --color-amber-50:  #2B1F10;
+  --color-amber-100: #3A2A14;
+  --color-amber-300: #6E5224;
+  --color-amber-500: #E8B25A;
+  --color-amber-700: #F0CC8A;
+
+  --color-green-50:  #15281D;
+  --color-green-100: #1B3325;
+  --color-green-300: #2F5A3F;
+  --color-green-500: #6FBE8A;
+  --color-green-700: #9BD3AE;
+
+  --color-white-a-3:  rgba(255, 255, 255, 0.025);
+  --color-white-a-5:  rgba(255, 255, 255, 0.045);
+  --color-white-a-8:  rgba(255, 255, 255, 0.075);
+  --color-white-a-12: rgba(255, 255, 255, 0.12);
+
+  /* ------------------------------------------------------------
+     2. SEMANTIC LAYER
+     ------------------------------------------------------------ */
+
+  --color-canvas:        var(--color-gray-50);
+  --color-canvas-raised: var(--color-gray-100);
+  --color-surface:       var(--color-gray-200);
+  --color-elevated:      var(--color-gray-300);
+  --color-hover:         var(--color-white-a-3);
+  --color-selected:      var(--color-blue-50);
+  --color-pressed:       var(--color-gray-25);
+
+  --color-divider-subtle: var(--color-gray-400);
+  --color-divider:        var(--color-gray-500);
+  --color-divider-strong: var(--color-gray-600);
+
+  --color-fg:           var(--color-gray-950);
+  --color-fg-muted:     var(--color-gray-800);
+  --color-fg-subtle:    var(--color-gray-700);
+  --color-fg-disabled:  var(--color-gray-600);
+  --color-fg-on-accent: var(--color-gray-50);
+
+  --color-danger:         var(--color-red-500);
+  --color-danger-subtle:  var(--color-red-50);
+  --color-danger-muted:   var(--color-red-300);
+
+  --color-warning:        var(--color-amber-500);
+  --color-warning-subtle: var(--color-amber-50);
+  --color-warning-muted:  var(--color-amber-300);
+
+  --color-success:        var(--color-green-500);
+  --color-success-subtle: var(--color-green-50);
+  --color-success-muted:  var(--color-green-300);
+
+  --color-info:           var(--color-blue-500);
+  --color-info-subtle:    var(--color-blue-50);
+  --color-info-muted:     var(--color-blue-300);
+
+  --color-accent:         var(--color-blue-500);
+  --color-accent-subtle:  var(--color-blue-50);
+  --color-accent-muted:   var(--color-blue-300);
+  --color-accent-glow:    rgba(91, 161, 240, 0.05);
+  --color-accent-glow-strong: rgba(91, 161, 240, 0.16);
+
+  --shadow-card:             0 1px 2px rgba(0, 0, 0, 0.4), 0 4px 16px rgba(0, 0, 0, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  --shadow-elevated:         0 1px 2px rgba(0, 0, 0, 0.5), 0 12px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  --shadow-highlight-top:    inset 0 1px 0 var(--color-white-a-5);
+  --shadow-highlight-strong: inset 0 1px 0 var(--color-white-a-8);
+
+  /* ------------------------------------------------------------
+     3. TYPOGRAPHY
+     ------------------------------------------------------------ */
+
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+}
