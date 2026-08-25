@@ -4,6 +4,8 @@ import { Loader2, AlertTriangle } from 'lucide-react'
 import { useDocumentTitle } from '../lib/useDocumentTitle'
 import PillSelect from '../components/PillSelect'
 import TextField from '../components/TextField'
+import SelectField from '../components/SelectField'
+import { COUNTRIES } from '../lib/countries'
 
 // Same-origin path — nginx proxies this to the self-hosted aksiom-demo-api service.
 // In local dev, Vite's proxy config (vite.config.js) forwards it to localhost:8090.
@@ -23,9 +25,13 @@ const previewFields = [
   ['name', 'name'],
   ['email', 'email'],
   ['company', 'company'],
+  ['country', 'country'],
+  ['timezone', 'timezone'],
   ['team_size', 'teamSize'],
   ['erp_systems', 'erpCount'],
   ['entities', 'entityCount'],
+  ['preferred_date', 'preferredDate'],
+  ['preferred_time', 'preferredTime'],
 ]
 
 function JsonPreview({ form }) {
@@ -45,6 +51,14 @@ function JsonPreview({ form }) {
   )
 }
 
+function detectTimezone() {
+  try {
+    return Intl.DateTimeFormat().resolvedOptions().timeZone || ''
+  } catch {
+    return '' // Intl not available — timezone just stays blank, no big deal
+  }
+}
+
 export default function DemoPage() {
   useDocumentTitle('Request a Demo')
   const [status, setStatus] = useState('idle') // idle | submitting | success | error
@@ -52,9 +66,13 @@ export default function DemoPage() {
     name: '',
     email: '',
     company: '',
+    country: '',
+    timezone: detectTimezone(),
     teamSize: '',
     erpCount: '',
     entityCount: '',
+    preferredDate: '',
+    preferredTime: '',
     message: '',
     website: '', // honeypot — stays empty for real users, left as-is if a bot fills it
   })
@@ -105,7 +123,9 @@ export default function DemoPage() {
               <span className="text-accent-muted">"message"</span>:{' '}
               <span className="text-fg">
                 "Thanks{form.name ? `, ${form.name.split(' ')[0]}` : ''} — we'll reach out to
-                {form.email ? ` ${form.email}` : ' you'} shortly."
+                {form.email ? ` ${form.email}` : ' you'}
+                {form.preferredDate ? ` around ${form.preferredDate}${form.preferredTime ? ` at ${form.preferredTime}` : ''}` : ' shortly'}
+                {form.timezone ? ` (${form.timezone})` : ''}."
               </span>
             </div>
           </div>
@@ -179,9 +199,45 @@ export default function DemoPage() {
             <TextField fieldKey="email" label="work email" name="email" type="email" required value={form.email} onChange={handleChange} placeholder="jane@company.com" />
             <TextField fieldKey="company" label="company name" name="company" required value={form.company} onChange={handleChange} placeholder="Acme Corp" />
 
+            <div className="flex flex-col gap-1.5">
+              <SelectField
+                fieldKey="country"
+                label="where are you based? (so we know the time difference)"
+                name="country"
+                value={form.country}
+                onChange={handleChange}
+                options={COUNTRIES}
+                placeholder="Select a country"
+              />
+              {form.timezone && (
+                <span className="text-[11px] font-mono text-fg-disabled">
+                  detected timezone: {form.timezone}
+                </span>
+              )}
+            </div>
+
             <PillSelect fieldKey="team_size" label="how many people on your team?" name="teamSize" options={TEAM_SIZE_OPTIONS} value={form.teamSize} onChange={handlePillChange} />
             <PillSelect fieldKey="erp_systems" label="how many ERP systems do you run?" name="erpCount" options={ERP_COUNT_OPTIONS} value={form.erpCount} onChange={handlePillChange} />
             <PillSelect fieldKey="entities" label="how many legal entities?" name="entityCount" options={ENTITY_COUNT_OPTIONS} value={form.entityCount} onChange={handlePillChange} />
+
+            <div className="grid grid-cols-2 gap-4">
+              <TextField
+                fieldKey="preferred_date"
+                label="best day to call? (optional)"
+                name="preferredDate"
+                type="date"
+                value={form.preferredDate}
+                onChange={handleChange}
+              />
+              <TextField
+                fieldKey="preferred_time"
+                label="best time? (optional)"
+                name="preferredTime"
+                type="time"
+                value={form.preferredTime}
+                onChange={handleChange}
+              />
+            </div>
 
             <TextField
               fieldKey="message"
