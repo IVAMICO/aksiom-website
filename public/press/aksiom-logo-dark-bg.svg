@@ -1,43 +1,25 @@
-<svg width="260" height="60" viewBox="0 0 260 60" xmlns="http://www.w3.org/2000/svg">
-  <svg x="2" y="2" width="56" height="56" viewBox="0 0 100 100">
+<svg width="262" height="56" viewBox="0 0 262 56" xmlns="http://www.w3.org/2000/svg">
+  <svg x="2" y="1" width="56" height="50.4" viewBox="0 0 100 90">
     <defs>
-      <linearGradient id="edge0" x1="50" y1="12" x2="32" y2="42" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#6DE8FD"/><stop offset="1" stop-color="#95D0FE"/></linearGradient>
-      <linearGradient id="edge1" x1="50" y1="12" x2="68" y2="42" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#6DE8FD"/><stop offset="1" stop-color="#95D0FE"/></linearGradient>
-      <linearGradient id="edge3" x1="32" y1="42" x2="14" y2="74" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#95D0FE"/><stop offset="1" stop-color="#235DFE"/></linearGradient>
-      <linearGradient id="edge4" x1="32" y1="42" x2="50" y2="74" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#95D0FE"/><stop offset="1" stop-color="#235DFE"/></linearGradient>
-      <linearGradient id="edge5" x1="68" y1="42" x2="50" y2="74" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#95D0FE"/><stop offset="1" stop-color="#235DFE"/></linearGradient>
-      <linearGradient id="edge6" x1="68" y1="42" x2="86" y2="74" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#95D0FE"/><stop offset="1" stop-color="#235DFE"/></linearGradient>
-      <radialGradient id="node_top" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#EAFBFF"/><stop offset="1" stop-color="#6DE8FD"/></radialGradient>
-      <radialGradient id="node_ml" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#EEF7FF"/><stop offset="1" stop-color="#95D0FE"/></radialGradient>
-      <radialGradient id="node_mr" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#EEF7FF"/><stop offset="1" stop-color="#95D0FE"/></radialGradient>
-      <radialGradient id="node_bl" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#6FA6FF"/><stop offset="1" stop-color="#235DFE"/></radialGradient>
-      <radialGradient id="node_bm" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#6FA6FF"/><stop offset="1" stop-color="#235DFE"/></radialGradient>
-      <radialGradient id="node_br" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#6FA6FF"/><stop offset="1" stop-color="#235DFE"/></radialGradient>
+      <linearGradient id="s1" x1="50" y1="8.64" x2="50" y2="46.81" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#95D0FE"/><stop offset="0.2" stop-color="#2894FD"/><stop offset="0.7" stop-color="#6DE8FD"/><stop offset="1" stop-color="#235DFE"/></linearGradient>
+      <linearGradient id="s2" x1="31.17" y1="41.19" x2="31.17" y2="79.36" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#95D0FE"/><stop offset="0.2" stop-color="#2894FD"/><stop offset="0.7" stop-color="#6DE8FD"/><stop offset="1" stop-color="#235DFE"/></linearGradient>
+      <linearGradient id="s3" x1="68.83" y1="41.19" x2="68.83" y2="79.36" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#95D0FE"/><stop offset="0.2" stop-color="#2894FD"/><stop offset="0.7" stop-color="#6DE8FD"/><stop offset="1" stop-color="#235DFE"/></linearGradient>
+      <linearGradient id="ntop" x1="50" y1="4" x2="50" y2="20.7" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#95D0FE"/><stop offset="0.2" stop-color="#2894FD"/><stop offset="0.7" stop-color="#6DE8FD"/><stop offset="1" stop-color="#235DFE"/></linearGradient>
+      <linearGradient id="nmr" x1="68.83" y1="36.54" x2="68.83" y2="53.24" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#95D0FE"/><stop offset="0.2" stop-color="#2894FD"/><stop offset="0.7" stop-color="#6DE8FD"/><stop offset="1" stop-color="#235DFE"/></linearGradient>
+      <linearGradient id="nml" x1="31.17" y1="36.54" x2="31.17" y2="53.24" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#95D0FE"/><stop offset="0.2" stop-color="#2894FD"/><stop offset="0.7" stop-color="#6DE8FD"/><stop offset="1" stop-color="#235DFE"/></linearGradient>
+      <linearGradient id="nbl" x1="12.35" y1="69.15" x2="12.35" y2="85.85" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#95D0FE"/><stop offset="0.2" stop-color="#2894FD"/><stop offset="0.7" stop-color="#6DE8FD"/><stop offset="1" stop-color="#235DFE"/></linearGradient>
+      <linearGradient id="nbm" x1="50" y1="69.15" x2="50" y2="85.85" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#95D0FE"/><stop offset="0.2" stop-color="#2894FD"/><stop offset="0.7" stop-color="#6DE8FD"/><stop offset="1" stop-color="#235DFE"/></linearGradient>
+      <linearGradient id="nbr" x1="87.65" y1="69.15" x2="87.65" y2="85.85" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#95D0FE"/><stop offset="0.2" stop-color="#2894FD"/><stop offset="0.7" stop-color="#6DE8FD"/><stop offset="1" stop-color="#235DFE"/></linearGradient>
     </defs>
-    <line x1="50" y1="12" x2="32" y2="42" stroke="url(#edge0)" stroke-width="7" stroke-linecap="round"/>
-    <circle cx="41.0" cy="27.0" r="2.4" fill="#FFFFFF" fill-opacity="0.55"/>
-    <line x1="50" y1="12" x2="68" y2="42" stroke="url(#edge1)" stroke-width="7" stroke-linecap="round"/>
-    <circle cx="59.0" cy="27.0" r="2.4" fill="#FFFFFF" fill-opacity="0.55"/>
-    <line x1="32" y1="42" x2="68" y2="42" stroke="#95D0FE" stroke-width="7" stroke-linecap="round"/>
-    <circle cx="50.0" cy="42.0" r="2.4" fill="#FFFFFF" fill-opacity="0.55"/>
-    <line x1="32" y1="42" x2="14" y2="74" stroke="url(#edge3)" stroke-width="7" stroke-linecap="round"/>
-    <circle cx="23.0" cy="58.0" r="2.4" fill="#FFFFFF" fill-opacity="0.55"/>
-    <line x1="32" y1="42" x2="50" y2="74" stroke="url(#edge4)" stroke-width="7" stroke-linecap="round"/>
-    <circle cx="41.0" cy="58.0" r="2.4" fill="#FFFFFF" fill-opacity="0.55"/>
-    <line x1="68" y1="42" x2="50" y2="74" stroke="url(#edge5)" stroke-width="7" stroke-linecap="round"/>
-    <circle cx="59.0" cy="58.0" r="2.4" fill="#FFFFFF" fill-opacity="0.55"/>
-    <line x1="68" y1="42" x2="86" y2="74" stroke="url(#edge6)" stroke-width="7" stroke-linecap="round"/>
-    <circle cx="77.0" cy="58.0" r="2.4" fill="#FFFFFF" fill-opacity="0.55"/>
-    <line x1="14" y1="74" x2="50" y2="74" stroke="#235DFE" stroke-width="7" stroke-linecap="round"/>
-    <circle cx="32.0" cy="74.0" r="2.4" fill="#FFFFFF" fill-opacity="0.55"/>
-    <line x1="50" y1="74" x2="86" y2="74" stroke="#235DFE" stroke-width="7" stroke-linecap="round"/>
-    <circle cx="68.0" cy="74.0" r="2.4" fill="#FFFFFF" fill-opacity="0.55"/>
-    <circle cx="50" cy="12" r="11" fill="url(#node_top)"/>
-    <circle cx="32" cy="42" r="11" fill="url(#node_ml)"/>
-    <circle cx="68" cy="42" r="11" fill="url(#node_mr)"/>
-    <circle cx="14" cy="74" r="11" fill="url(#node_bl)"/>
-    <circle cx="50" cy="74" r="11" fill="url(#node_bm)"/>
-    <circle cx="86" cy="74" r="11" fill="url(#node_br)"/>
+    <path d="M72.04 46.81 L27.96 46.81 L50.0 8.64 Z M34.39 43.1 L65.62 43.1 L50.01 16.05 Z" fill="url(#s1)"/>
+    <path d="M53.22 79.36 L9.13 79.36 L31.17 41.19 Z M15.56 75.65 L46.8 75.65 L31.19 48.6 Z" fill="url(#s2)"/>
+    <path d="M90.87 79.36 L46.78 79.36 L68.83 41.19 Z M53.22 75.65 L84.45 75.65 L68.84 48.6 Z" fill="url(#s3)"/>
+    <circle cx="50" cy="12.35" r="8.35" fill="url(#ntop)"/>
+    <circle cx="68.83" cy="44.89" r="8.35" fill="url(#nmr)"/>
+    <circle cx="31.17" cy="44.89" r="8.35" fill="url(#nml)"/>
+    <circle cx="12.35" cy="77.5" r="8.35" fill="url(#nbl)"/>
+    <circle cx="50" cy="77.5" r="8.35" fill="url(#nbm)"/>
+    <circle cx="87.65" cy="77.5" r="8.35" fill="url(#nbr)"/>
   </svg>
-  <text x="70" y="39" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="30" font-weight="600" fill="#E6E8EC">aksiom</text>
+  <text x="72" y="37" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="30" font-weight="600" fill="#E6E8EC">aksiom</text>
 </svg>
