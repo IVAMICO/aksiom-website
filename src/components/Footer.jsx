@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import LogoMark from './LogoMark'
 
 const columns = [
   {
@@ -65,7 +66,10 @@ export default function Footer() {
           ))}
         </div>
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 border-t border-white/5 text-fg-subtle">
-          <Link to="/" className="text-2xl font-semibold text-fg tracking-tight">Aksiom.ai</Link>
+          <Link to="/" className="text-2xl font-semibold text-fg tracking-tight flex items-center gap-2">
+            <LogoMark size={24} />
+            aksiom.ai
+          </Link>
           <div className="text-center md:text-right">
             <div>© {new Date().getFullYear()} Aksiom.ai. All rights reserved.</div>
             <div className="text-xs mt-0.5">Krondalvej 9A, 2610 Rødovre, Denmark</div>

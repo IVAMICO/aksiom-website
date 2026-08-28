@@ -73,7 +73,7 @@ export default function SolutionSection() {
           <div className="absolute left-6 top-6 bottom-6 w-px">
             <div className="w-full h-full bg-divider-subtle" />
             <motion.div
-              className="absolute left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-accent shadow-[0_0_10px_rgba(91,161,240,0.8)]"
+              className="absolute left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-accent shadow-[0_0_10px_rgba(35,93,254,0.8)]"
               animate={{ top: ['0%', '100%'] }}
               transition={{ duration: 3.5, repeat: Infinity, ease: 'linear' }}
             />

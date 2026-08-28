@@ -1,42 +1,17 @@
 import { motion } from 'motion/react'
 import { Link } from 'react-router-dom'
+import HeroMeshBackground from './HeroMeshBackground'
 
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-20 bg-transparent">
 
-      {/* Ambient orbital background */}
-      <div className="absolute inset-0 pointer-events-none z-0 flex items-center justify-center [perspective:2000px]">
+      {/* Ambient background — soft brand-blue glow plus a scattered mesh of the logo's
+          triangle-node motif, per Visual Identity 1.0's dark-mode background treatment. */}
+      <div className="absolute inset-0 pointer-events-none z-0 flex items-center justify-center">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] max-w-[800px] max-h-[800px] bg-accent-subtle/40 blur-[120px] rounded-full" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[30vw] h-[30vw] max-w-[400px] max-h-[400px] bg-accent-glow-strong blur-[100px] rounded-full mix-blend-screen" />
-
-        <div className="absolute bottom-[-20%] left-[-50%] right-[-50%] h-[70vh] bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem] [transform:rotateX(75deg)] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_20%,transparent_80%)] mix-blend-overlay opacity-80" />
-
-        <motion.div
-          animate={{ rotateZ: 360, rotateX: [65, 75, 65] }}
-          transition={{ duration: 40, repeat: Infinity, ease: 'linear' }}
-          className="absolute w-[80vw] h-[80vw] max-w-[1200px] max-h-[1200px] rounded-full border border-white/[0.03] border-t-white/[0.1] shadow-[inset_0_0_50px_rgba(255,255,255,0.01)]"
-          style={{ transformStyle: 'preserve-3d' }}
-        />
-
-        <motion.div
-          animate={{ rotateZ: -360, rotateY: [50, 65, 50] }}
-          transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
-          className="absolute w-[60vw] h-[60vw] max-w-[850px] max-h-[850px] rounded-full border border-accent-muted/[0.15] border-b-accent/[0.2] shadow-[0_0_30px_rgba(91,161,240,0.02)]"
-          style={{ transformStyle: 'preserve-3d' }}
-        >
-          <div className="absolute bottom-0 right-1/4 w-2 h-2 bg-accent-muted rounded-full blur-[2px] shadow-[0_0_20px_rgba(91,161,240,0.8)]" />
-          <div className="absolute top-1/4 left-0 w-1 h-1 bg-accent-muted rounded-full shadow-[0_0_10px_rgba(91,161,240,0.6)]" />
-        </motion.div>
-
-        <motion.div
-          animate={{ rotateZ: 360, rotateX: [55, 70, 55], rotateY: [0, 15, 0] }}
-          transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-          className="absolute w-[40vw] h-[40vw] max-w-[500px] max-h-[500px] rounded-full border border-accent/[0.1] border-l-accent/[0.4] shadow-[inset_0_0_40px_rgba(91,161,240,0.05)]"
-          style={{ transformStyle: 'preserve-3d' }}
-        >
-          <div className="absolute top-0 left-1/2 w-2.5 h-2.5 bg-accent rounded-full blur-[1px] shadow-[0_0_25px_rgba(91,161,240,1)]" />
-        </motion.div>
+        <HeroMeshBackground />
       </div>
 
       <div className="relative z-10 w-full max-w-5xl mx-auto px-6 lg:px-8 text-center flex flex-col items-center mt-12">

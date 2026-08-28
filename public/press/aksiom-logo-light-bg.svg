@@ -1,4 +1,43 @@
-<svg width="220" height="48" viewBox="0 0 220 48" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="12" cy="24" r="6" fill="#2D5A9E" />
-  <text x="30" y="32" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="600" fill="#0B0D11">Aksiom</text>
+<svg width="260" height="60" viewBox="0 0 260 60" xmlns="http://www.w3.org/2000/svg">
+  <svg x="2" y="2" width="56" height="56" viewBox="0 0 100 100">
+    <defs>
+      <linearGradient id="edge0" x1="50" y1="12" x2="32" y2="42" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#6DE8FD"/><stop offset="1" stop-color="#95D0FE"/></linearGradient>
+      <linearGradient id="edge1" x1="50" y1="12" x2="68" y2="42" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#6DE8FD"/><stop offset="1" stop-color="#95D0FE"/></linearGradient>
+      <linearGradient id="edge3" x1="32" y1="42" x2="14" y2="74" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#95D0FE"/><stop offset="1" stop-color="#235DFE"/></linearGradient>
+      <linearGradient id="edge4" x1="32" y1="42" x2="50" y2="74" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#95D0FE"/><stop offset="1" stop-color="#235DFE"/></linearGradient>
+      <linearGradient id="edge5" x1="68" y1="42" x2="50" y2="74" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#95D0FE"/><stop offset="1" stop-color="#235DFE"/></linearGradient>
+      <linearGradient id="edge6" x1="68" y1="42" x2="86" y2="74" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#95D0FE"/><stop offset="1" stop-color="#235DFE"/></linearGradient>
+      <radialGradient id="node_top" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#EAFBFF"/><stop offset="1" stop-color="#6DE8FD"/></radialGradient>
+      <radialGradient id="node_ml" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#EEF7FF"/><stop offset="1" stop-color="#95D0FE"/></radialGradient>
+      <radialGradient id="node_mr" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#EEF7FF"/><stop offset="1" stop-color="#95D0FE"/></radialGradient>
+      <radialGradient id="node_bl" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#6FA6FF"/><stop offset="1" stop-color="#235DFE"/></radialGradient>
+      <radialGradient id="node_bm" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#6FA6FF"/><stop offset="1" stop-color="#235DFE"/></radialGradient>
+      <radialGradient id="node_br" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#6FA6FF"/><stop offset="1" stop-color="#235DFE"/></radialGradient>
+    </defs>
+    <line x1="50" y1="12" x2="32" y2="42" stroke="url(#edge0)" stroke-width="7" stroke-linecap="round"/>
+    <circle cx="41.0" cy="27.0" r="2.4" fill="#FFFFFF" fill-opacity="0.55"/>
+    <line x1="50" y1="12" x2="68" y2="42" stroke="url(#edge1)" stroke-width="7" stroke-linecap="round"/>
+    <circle cx="59.0" cy="27.0" r="2.4" fill="#FFFFFF" fill-opacity="0.55"/>
+    <line x1="32" y1="42" x2="68" y2="42" stroke="#95D0FE" stroke-width="7" stroke-linecap="round"/>
+    <circle cx="50.0" cy="42.0" r="2.4" fill="#FFFFFF" fill-opacity="0.55"/>
+    <line x1="32" y1="42" x2="14" y2="74" stroke="url(#edge3)" stroke-width="7" stroke-linecap="round"/>
+    <circle cx="23.0" cy="58.0" r="2.4" fill="#FFFFFF" fill-opacity="0.55"/>
+    <line x1="32" y1="42" x2="50" y2="74" stroke="url(#edge4)" stroke-width="7" stroke-linecap="round"/>
+    <circle cx="41.0" cy="58.0" r="2.4" fill="#FFFFFF" fill-opacity="0.55"/>
+    <line x1="68" y1="42" x2="50" y2="74" stroke="url(#edge5)" stroke-width="7" stroke-linecap="round"/>
+    <circle cx="59.0" cy="58.0" r="2.4" fill="#FFFFFF" fill-opacity="0.55"/>
+    <line x1="68" y1="42" x2="86" y2="74" stroke="url(#edge6)" stroke-width="7" stroke-linecap="round"/>
+    <circle cx="77.0" cy="58.0" r="2.4" fill="#FFFFFF" fill-opacity="0.55"/>
+    <line x1="14" y1="74" x2="50" y2="74" stroke="#235DFE" stroke-width="7" stroke-linecap="round"/>
+    <circle cx="32.0" cy="74.0" r="2.4" fill="#FFFFFF" fill-opacity="0.55"/>
+    <line x1="50" y1="74" x2="86" y2="74" stroke="#235DFE" stroke-width="7" stroke-linecap="round"/>
+    <circle cx="68.0" cy="74.0" r="2.4" fill="#FFFFFF" fill-opacity="0.55"/>
+    <circle cx="50" cy="12" r="11" fill="url(#node_top)"/>
+    <circle cx="32" cy="42" r="11" fill="url(#node_ml)"/>
+    <circle cx="68" cy="42" r="11" fill="url(#node_mr)"/>
+    <circle cx="14" cy="74" r="11" fill="url(#node_bl)"/>
+    <circle cx="50" cy="74" r="11" fill="url(#node_bm)"/>
+    <circle cx="86" cy="74" r="11" fill="url(#node_br)"/>
+  </svg>
+  <text x="70" y="39" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="30" font-weight="600" fill="#101218">aksiom</text>
 </svg>

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
+import LogoMark from './LogoMark'
 
 const navLinks = [
   { label: 'The Challenge', href: '/#problem' },
@@ -20,8 +21,8 @@ export default function Navbar() {
     <nav className="fixed top-0 inset-x-0 z-50 bg-canvas/85 backdrop-blur-xl border-b border-divider-subtle">
       <div className="max-w-6xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
         <Link to="/" className="text-fg font-semibold text-lg tracking-tight flex items-center gap-2" onClick={() => setOpen(false)}>
-          <div className="w-2 h-2 rounded-full bg-accent" />
-          Aksiom
+          <LogoMark size={26} />
+          aksiom
         </Link>
 
         <div className="hidden md:flex items-center gap-8">

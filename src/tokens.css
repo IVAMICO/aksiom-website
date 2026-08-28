@@ -4,24 +4,33 @@
      1. PRIMITIVES
      ------------------------------------------------------------ */
 
-  --color-gray-25:  #08090C;
-  --color-gray-50:  #0B0D11;
-  --color-gray-100: #0F1117;
-  --color-gray-200: #13161C;
-  --color-gray-300: #181C24;
-  --color-gray-400: #1F2229;
-  --color-gray-500: #2A2F39;
-  --color-gray-600: #3A4150;
-  --color-gray-700: #5A6170;
-  --color-gray-800: #8B92A0;
+  /* Neutral scale — per brand guide "Colors / Dark Mode": Aksiom Black, Grey 900/700/500/300/100.
+     Grey 100 (#8D929F) is the lightest neutral the brand guide defines; gray-900/950 have no
+     brand-specified value (the guide's ramp is for structure/background, not body text) so they
+     stay at their previous light values for legibility. gray-200/500/700 are interpolated between
+     the given anchors to keep the finer-grained steps the UI already relies on. */
+  --color-gray-25:  #0A0C10;
+  --color-gray-50:  #101218; /* Aksiom Black */
+  --color-gray-100: #13171F; /* Grey 900 */
+  --color-gray-200: #1A1C24; /* interpolated: Grey 900 -> Grey 700 */
+  --color-gray-300: #202229; /* Grey 700 */
+  --color-gray-400: #262930; /* Grey 500 */
+  --color-gray-500: #3E424C; /* interpolated: Grey 500 -> Grey 300 */
+  --color-gray-600: #575C6A; /* Grey 300 */
+  --color-gray-700: #72778A; /* interpolated: Grey 300 -> Grey 100 */
+  --color-gray-800: #8D929F; /* Grey 100 */
   --color-gray-900: #C8CDD5;
   --color-gray-950: #E6E8EC;
 
-  --color-blue-50:   #0F1A2A;
-  --color-blue-100:  #142339;
-  --color-blue-300:  #2D5A9E;
-  --color-blue-500:  #5BA1F0;
-  --color-blue-700:  #8FC0F5;
+  /* Brand blue family — per brand guide light-mode swatches (Aksiom Blue, Light Blue,
+     Soft Blue, Turquoise). blue-50/100 are darkened background tints derived from Aksiom
+     Blue — the guide doesn't define a dark-tint step since it's a light-mode swatch set. */
+  --color-blue-50:   #0E1830; /* derived dark tint, for subtle/selected backgrounds */
+  --color-blue-100:  #13224A; /* derived dark tint, one step lighter */
+  --color-blue-300:  #2894FD; /* Light Blue */
+  --color-blue-400:  #95D0FE; /* Soft Blue */
+  --color-blue-500:  #235DFE; /* Aksiom Blue — primary accent */
+  --color-blue-700:  #6DE8FD; /* Turquoise */
 
   --color-red-50:    #2A1418;
   --color-red-100:   #3A1A20;
@@ -87,8 +96,8 @@
   --color-accent:         var(--color-blue-500);
   --color-accent-subtle:  var(--color-blue-50);
   --color-accent-muted:   var(--color-blue-300);
-  --color-accent-glow:    rgba(91, 161, 240, 0.05);
-  --color-accent-glow-strong: rgba(91, 161, 240, 0.16);
+  --color-accent-glow:    rgba(35, 93, 254, 0.05);
+  --color-accent-glow-strong: rgba(35, 93, 254, 0.16);
 
   --shadow-card:             0 1px 2px rgba(0, 0, 0, 0.4), 0 4px 16px rgba(0, 0, 0, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.04);
   --shadow-elevated:         0 1px 2px rgba(0, 0, 0, 0.5), 0 12px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.05);

@@ -63,7 +63,7 @@ export default function ProblemSection() {
             rotate: { duration: 120, repeat: Infinity, ease: 'linear' },
             scale: { duration: 8, repeat: Infinity, ease: 'easeInOut' },
           }}
-          className="w-[80vw] h-[80vw] max-w-[800px] max-h-[800px] bg-[radial-gradient(circle,rgba(91,161,240,0.03)_0%,transparent_70%)] rounded-full"
+          className="w-[80vw] h-[80vw] max-w-[800px] max-h-[800px] bg-[radial-gradient(circle,rgba(35,93,254,0.03)_0%,transparent_70%)] rounded-full"
         />
       </div>
 
@@ -98,7 +98,7 @@ export default function ProblemSection() {
                   <div className="relative shrink-0 mt-1">
                     <div
                       className={`w-8 h-8 rounded-full flex items-center justify-center border transition-all duration-700 ${
-                        isActive ? 'bg-accent-subtle border-accent-muted/60 shadow-[0_0_15px_rgba(91,161,240,0.2)]' : 'bg-canvas border-white/10'
+                        isActive ? 'bg-accent-subtle border-accent-muted/60 shadow-[0_0_15px_rgba(35,93,254,0.2)]' : 'bg-canvas border-white/10'
                       }`}
                     >
                       <div className={`w-1.5 h-1.5 rounded-full transition-colors duration-700 ${isActive ? 'bg-accent' : 'bg-fg-disabled'}`} />
@@ -155,8 +155,8 @@ export default function ProblemSection() {
                 const targetPos = activeStage === 0 ? dot.p0 : activeStage === 1 ? dot.p1 : dot.p2
 
                 const isAnomalyActive = activeStage === 2 && dot.isAnomaly
-                const color = isAnomalyActive ? '#E87878' : activeStage === 1 || activeStage === 2 ? '#5BA1F0' : '#5A6170'
-                const shadow = isAnomalyActive ? '0 0 10px rgba(232,120,120,0.6)' : activeStage > 0 ? '0 0 8px rgba(91,161,240,0.4)' : 'none'
+                const color = isAnomalyActive ? '#E87878' : activeStage === 1 || activeStage === 2 ? '#235DFE' : '#72778A'
+                const shadow = isAnomalyActive ? '0 0 10px rgba(232,120,120,0.6)' : activeStage > 0 ? '0 0 8px rgba(35,93,254,0.4)' : 'none'
 
                 return (
                   <motion.div
