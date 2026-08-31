@@ -1,5 +1,3 @@
-import { useEffect } from 'react'
-import { useLocation } from 'react-router-dom'
 import { motion } from 'motion/react'
 import { Building2, Target, Compass, Users, Mail } from 'lucide-react'
 import { useDocumentTitle } from '../lib/useDocumentTitle'
@@ -38,13 +36,6 @@ function Avatar({ name, photo }) {
 
 export default function AboutPage() {
   useDocumentTitle('About')
-  const location = useLocation()
-
-  useEffect(() => {
-    if (location.hash === '#team') {
-      document.getElementById('team')?.scrollIntoView({ behavior: 'smooth' })
-    }
-  }, [location])
 
   return (
     <div className="pt-32 sm:pt-40 pb-24 sm:pb-32 font-sans">
@@ -105,10 +96,8 @@ export default function AboutPage() {
 
         </div>
 
-        <div className="border-t border-divider-subtle mt-20 pt-20">
+        <div id="team" className="border-t border-divider-subtle mt-20 pt-20 scroll-mt-24">
           <motion.section
-            id="team"
-            className="scroll-mt-24"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
