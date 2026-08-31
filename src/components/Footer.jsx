@@ -8,13 +8,14 @@ const columns = [
       { label: 'Data Quality', href: '/#data-quality' },
       { label: 'Classification Funnel', href: '/#platform' },
       { label: 'AI Audit', href: '/#how-it-works' },
+      { label: 'Pricing', href: '/pricing' },
     ],
   },
   {
     heading: 'COMPANY',
     links: [
       { label: 'About', href: '/about' },
-      { label: 'Team', href: '/team' },
+      { label: 'Team', href: '/about#team' },
       { label: 'Press', href: '/press' },
       { label: 'Contact', href: 'mailto:info@aksiom.ai' },
     ],

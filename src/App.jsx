@@ -1,8 +1,8 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import Layout from './components/Layout'
 import HomePage from './pages/HomePage'
 import AboutPage from './pages/AboutPage'
-import TeamPage from './pages/TeamPage'
+import PricingPage from './pages/PricingPage'
 import InformationPage from './pages/InformationPage'
 import DemoPage from './pages/DemoPage'
 import PrivacyPolicyPage from './pages/legal/PrivacyPolicyPage'
@@ -18,7 +18,8 @@ function App() {
         <Route element={<Layout />}>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
-          <Route path="/team" element={<TeamPage />} />
+          <Route path="/team" element={<Navigate to="/about#team" replace />} />
+          <Route path="/pricing" element={<PricingPage />} />
           <Route path="/press" element={<InformationPage />} />
           <Route path="/demo" element={<DemoPage />} />
           <Route path="/privacy" element={<PrivacyPolicyPage />} />

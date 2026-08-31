@@ -1,4 +1,5 @@
 import Hero from '../components/Hero'
+import TrustedBy from '../components/TrustedBy'
 import ProblemSection from '../components/ProblemSection'
 import DataQualitySection from '../components/DataQualitySection'
 import SolutionSection from '../components/SolutionSection'
@@ -9,6 +10,8 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+
+      <TrustedBy />
 
       <div id="problem" className="relative">
         <ProblemSection />

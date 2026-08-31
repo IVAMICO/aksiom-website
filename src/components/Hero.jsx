@@ -6,11 +6,9 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-20 bg-transparent">
 
-      {/* Ambient background — soft brand-blue glow plus a scattered mesh of the logo's
-          triangle-node motif, per Visual Identity 1.0's dark-mode background treatment. */}
+      {/* Ambient background — a scattered mesh of the logo's triangle-node motif,
+          per Visual Identity 1.0's dark-mode background treatment. */}
       <div className="absolute inset-0 pointer-events-none z-0 flex items-center justify-center">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] max-w-[800px] max-h-[800px] bg-accent-subtle/40 blur-[120px] rounded-full" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[30vw] h-[30vw] max-w-[400px] max-h-[400px] bg-accent-glow-strong blur-[100px] rounded-full mix-blend-screen" />
         <HeroMeshBackground />
       </div>
 

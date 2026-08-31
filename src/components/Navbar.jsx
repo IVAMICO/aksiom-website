@@ -7,12 +7,24 @@ const navLinks = [
   { label: 'The Challenge', href: '/#problem' },
   { label: 'Platform', href: '/#platform' },
   { label: 'How It Works', href: '/#how-it-works' },
+  { label: 'Pricing', to: '/pricing' },
 ]
 
 const companyLinks = [
   { label: 'About', to: '/about' },
-  { label: 'Team', to: '/team' },
 ]
+
+function NavItem({ link, onClick, className }) {
+  return link.to ? (
+    <Link to={link.to} onClick={onClick} className={className}>
+      {link.label}
+    </Link>
+  ) : (
+    <a href={link.href} onClick={onClick} className={className}>
+      {link.label}
+    </a>
+  )
+}
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
@@ -27,15 +39,11 @@ export default function Navbar() {
 
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <a key={link.label} href={link.href} className="text-sm text-fg-muted hover:text-fg transition-colors">
-              {link.label}
-            </a>
+            <NavItem key={link.label} link={link} className="text-sm text-fg-muted hover:text-fg transition-colors" />
           ))}
           <span className="w-px h-4 bg-divider-subtle" aria-hidden="true" />
           {companyLinks.map((link) => (
-            <Link key={link.label} to={link.to} className="text-sm text-fg-muted hover:text-fg transition-colors">
-              {link.label}
-            </Link>
+            <NavItem key={link.label} link={link} className="text-sm text-fg-muted hover:text-fg transition-colors" />
           ))}
         </div>
 
@@ -61,14 +69,10 @@ export default function Navbar() {
       {open && (
         <div className="md:hidden border-t border-divider-subtle bg-canvas/95 backdrop-blur-xl px-6 py-4 flex flex-col gap-4">
           {navLinks.map((link) => (
-            <a key={link.label} href={link.href} onClick={() => setOpen(false)} className="text-sm text-fg-muted hover:text-fg transition-colors">
-              {link.label}
-            </a>
+            <NavItem key={link.label} link={link} onClick={() => setOpen(false)} className="text-sm text-fg-muted hover:text-fg transition-colors" />
           ))}
           {companyLinks.map((link) => (
-            <Link key={link.label} to={link.to} onClick={() => setOpen(false)} className="text-sm text-fg-muted hover:text-fg transition-colors">
-              {link.label}
-            </Link>
+            <NavItem key={link.label} link={link} onClick={() => setOpen(false)} className="text-sm text-fg-muted hover:text-fg transition-colors" />
           ))}
         </div>
       )}

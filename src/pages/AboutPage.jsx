@@ -1,6 +1,14 @@
+import { useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 import { motion } from 'motion/react'
-import { Building2, Target, Compass } from 'lucide-react'
+import { Building2, Target, Compass, Users, Mail } from 'lucide-react'
 import { useDocumentTitle } from '../lib/useDocumentTitle'
+
+const team = [
+  { name: 'Vidak Rajovic', title: 'Co-Founder', email: 'vidak@aksiom.ai', photo: '/team/vidak.jpg' },
+  { name: 'Vuk Rajovic', title: 'Co-Founder', email: 'vuk@aksiom.ai', photo: '/team/vuk.jpg' },
+  { name: 'Milo Rajovic', title: 'Co-Founder', email: 'milo@aksiom.ai', photo: '/team/milo.jpg' },
+]
 
 function PlaceholderBlock({ children }) {
   return (
@@ -10,8 +18,34 @@ function PlaceholderBlock({ children }) {
   )
 }
 
+function Avatar({ name, photo }) {
+  if (photo) {
+    return (
+      <img
+        src={photo}
+        alt={name}
+        className="w-full aspect-square rounded-2xl object-cover"
+      />
+    )
+  }
+  const initials = name.split(' ').map((w) => w[0]).join('').slice(0, 2)
+  return (
+    <div className="w-full aspect-square rounded-2xl bg-elevated border border-divider-subtle flex items-center justify-center text-fg-subtle font-semibold text-2xl">
+      {initials}
+    </div>
+  )
+}
+
 export default function AboutPage() {
   useDocumentTitle('About')
+  const location = useLocation()
+
+  useEffect(() => {
+    if (location.hash === '#team') {
+      document.getElementById('team')?.scrollIntoView({ behavior: 'smooth' })
+    }
+  }, [location])
+
   return (
     <div className="pt-32 sm:pt-40 pb-24 sm:pb-32 font-sans">
       <div className="max-w-3xl mx-auto px-6 lg:px-8">
@@ -68,6 +102,55 @@ export default function AboutPage() {
               </div>
             </div>
           </section>
+
+        </div>
+
+        <div className="border-t border-divider-subtle mt-20 pt-20">
+          <motion.section
+            id="team"
+            className="scroll-mt-24"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent-subtle border border-accent-muted/40 text-accent text-xs font-medium mb-6">
+              <Users className="w-3.5 h-3.5" />
+              Meet the Team
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-fg mb-6 leading-tight">
+              The people behind Aksiom
+            </h2>
+            <p className="text-fg-muted text-sm leading-relaxed mb-10 max-w-xl">
+              Founded by three brothers in Copenhagen, summer 2026. [Placeholder — a sentence or two on
+              background / what unites the team.]
+            </p>
+            <div className="grid grid-cols-3 gap-4 sm:gap-6">
+              {team.map((member, i) => (
+                <motion.div
+                  key={member.email}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.08, duration: 0.5 }}
+                  className="flex flex-col items-start gap-4 rounded-2xl bg-surface/40 border border-divider-subtle p-3 sm:p-4"
+                >
+                  <Avatar name={member.name} photo={member.photo} />
+                  <div>
+                    <h3 className="text-fg text-base font-semibold">{member.name}</h3>
+                    <p className="text-fg-muted text-sm">{member.title}</p>
+                  </div>
+                  <a
+                    href={`mailto:${member.email}`}
+                    className="flex items-center gap-1.5 text-fg-subtle hover:text-accent text-xs transition-colors"
+                  >
+                    <Mail className="w-3.5 h-3.5" />
+                    <span>{member.email}</span>
+                  </a>
+                </motion.div>
+              ))}
+            </div>
+          </motion.section>
         </div>
       </div>
     </div>
