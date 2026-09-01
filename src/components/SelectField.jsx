@@ -1,15 +1,16 @@
-export default function SelectField({ fieldKey, label, name, value, onChange, options, placeholder }) {
+export default function SelectField({ label, name, value, onChange, options, placeholder, required }) {
   return (
     <label className="flex flex-col gap-2">
-      <div className="flex items-baseline gap-2">
-        <span className="font-mono text-xs text-accent">{fieldKey}:</span>
-        <span className="text-xs text-fg-disabled">// {label}</span>
-      </div>
+      <span className="text-sm font-medium text-fg flex items-center gap-1.5">
+        {label}
+        {required && <span className="w-1.5 h-1.5 rounded-full bg-danger shrink-0" aria-label="required" />}
+      </span>
       <select
         name={name}
         value={value}
         onChange={onChange}
-        className="bg-transparent border-b border-divider-subtle focus:border-accent px-0 py-2 text-sm font-mono text-fg focus:outline-none transition-colors"
+        required={required}
+        className="rounded-lg border border-divider-subtle bg-canvas/50 focus:border-accent px-3.5 py-2.5 text-sm text-fg focus:outline-none transition-colors"
       >
         <option value="" disabled className="bg-canvas text-fg-disabled">
           {placeholder}

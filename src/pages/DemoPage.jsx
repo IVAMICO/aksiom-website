@@ -1,55 +1,26 @@
 import { useState } from 'react'
 import { motion } from 'motion/react'
-import { Loader2, AlertTriangle } from 'lucide-react'
+import { Loader2, AlertTriangle, Video, CheckCircle2, CheckCircle } from 'lucide-react'
 import { useDocumentTitle } from '../lib/useDocumentTitle'
 import PillSelect from '../components/PillSelect'
 import TextField from '../components/TextField'
 import SelectField from '../components/SelectField'
+import Calendar from '../components/Calendar'
+import TimeSlotPicker from '../components/TimeSlotPicker'
 import { COUNTRIES } from '../lib/countries'
 
 // Same-origin path — nginx proxies this to the self-hosted aksiom-demo-api service.
 // In local dev, Vite's proxy config (vite.config.js) forwards it to localhost:8090.
 const DEMO_API_ENDPOINT = '/api/demo-requests'
 
-const TEAM_SIZE_OPTIONS = ['1–10', '11–50', '51–200', '200+']
 const ERP_COUNT_OPTIONS = ['1', '2–5', '6+']
 const ENTITY_COUNT_OPTIONS = ['Under 10', '10–50', '50–200', '200+']
 
-const comments = [
+const highlights = [
   '30-minute walkthrough on your own ERP data',
-  'see the classification funnel and AI audit live',
-  'no commitment — just a conversation',
+  'See the classification funnel and AI audit live',
+  'No commitment — just a conversation',
 ]
-
-const previewFields = [
-  ['name', 'name'],
-  ['email', 'email'],
-  ['company', 'company'],
-  ['country', 'country'],
-  ['timezone', 'timezone'],
-  ['team_size', 'teamSize'],
-  ['erp_systems', 'erpCount'],
-  ['entities', 'entityCount'],
-  ['preferred_date', 'preferredDate'],
-  ['preferred_time', 'preferredTime'],
-]
-
-function JsonPreview({ form }) {
-  return (
-    <div className="rounded-lg bg-canvas border border-divider-subtle p-4 font-mono text-xs leading-relaxed overflow-x-auto">
-      <div className="text-fg-subtle">{'{'}</div>
-      {previewFields.map(([key, formKey], i) => (
-        <div key={key} className="pl-4 whitespace-nowrap">
-          <span className="text-accent-muted">"{key}"</span>
-          <span className="text-fg-subtle">: </span>
-          <span className={form[formKey] ? 'text-fg' : 'text-fg-disabled'}>"{form[formKey]}"</span>
-          {i < previewFields.length - 1 && <span className="text-fg-subtle">,</span>}
-        </div>
-      ))}
-      <div className="text-fg-subtle">{'}'}</div>
-    </div>
-  )
-}
 
 function detectTimezone() {
   try {
@@ -68,7 +39,6 @@ export default function DemoPage() {
     company: '',
     country: '',
     timezone: detectTimezone(),
-    teamSize: '',
     erpCount: '',
     entityCount: '',
     preferredDate: '',
@@ -107,28 +77,18 @@ export default function DemoPage() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="max-w-md w-full rounded-xl bg-surface/40 border border-divider-subtle overflow-hidden"
+          className="max-w-md w-full rounded-2xl bg-surface/40 border border-divider-subtle p-8 sm:p-10 text-center"
         >
-          <div className="flex items-center gap-2 px-4 py-2.5 border-b border-divider-subtle bg-canvas-raised/60">
-            <span className="w-2.5 h-2.5 rounded-full bg-danger/50" aria-hidden="true" />
-            <span className="w-2.5 h-2.5 rounded-full bg-warning/50" aria-hidden="true" />
-            <span className="w-2.5 h-2.5 rounded-full bg-success/50" aria-hidden="true" />
-            <span className="ml-2 text-xs font-mono text-fg-subtle">response</span>
+          <div className="w-12 h-12 rounded-full bg-success-subtle border border-success-muted/40 flex items-center justify-center mx-auto mb-6">
+            <CheckCircle className="w-6 h-6 text-success" strokeWidth={1.75} />
           </div>
-          <div className="p-6 font-mono text-sm">
-            <div className="text-success mb-3">200 OK</div>
-            <div className="text-fg-muted leading-relaxed">
-              <span className="text-accent-muted">"status"</span>: <span className="text-fg">"received"</span>
-              <br />
-              <span className="text-accent-muted">"message"</span>:{' '}
-              <span className="text-fg">
-                "Thanks{form.name ? `, ${form.name.split(' ')[0]}` : ''} — we'll reach out to
-                {form.email ? ` ${form.email}` : ' you'}
-                {form.preferredDate ? ` around ${form.preferredDate}${form.preferredTime ? ` at ${form.preferredTime}` : ''}` : ' shortly'}
-                {form.timezone ? ` (${form.timezone})` : ''}."
-              </span>
-            </div>
-          </div>
+          <h1 className="text-2xl font-semibold tracking-tight text-fg mb-3">Request received</h1>
+          <p className="text-fg-muted text-sm leading-relaxed">
+            Thanks{form.name ? `, ${form.name.split(' ')[0]}` : ''} — we'll reach out to
+            {form.email ? ` ${form.email}` : ' you'}
+            {form.preferredDate ? ` around ${form.preferredDate}${form.preferredTime ? ` at ${form.preferredTime}` : ''}` : ' shortly'}
+            {form.timezone ? ` (${form.timezone})` : ''}.
+          </p>
         </motion.div>
       </div>
     )
@@ -143,7 +103,10 @@ export default function DemoPage() {
           transition={{ duration: 0.6 }}
           className="text-center mb-10"
         >
-          <div className="font-mono text-xs text-fg-subtle mb-4">~/aksiom/demo-request</div>
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent-subtle border border-accent-muted/40 text-accent text-xs font-medium mb-6">
+            <Video className="w-3.5 h-3.5" />
+            Request a Demo
+          </div>
           <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight text-fg mb-4 leading-tight">
             See it on your own data
           </h1>
@@ -156,15 +119,8 @@ export default function DemoPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1, duration: 0.6 }}
-          className="rounded-xl bg-surface/40 border border-divider-subtle overflow-hidden shadow-elevated"
+          className="rounded-2xl bg-surface/40 border border-divider-subtle overflow-hidden shadow-elevated"
         >
-          <div className="flex items-center gap-2 px-4 py-2.5 border-b border-divider-subtle bg-canvas-raised/60">
-            <span className="w-2.5 h-2.5 rounded-full bg-danger/50" aria-hidden="true" />
-            <span className="w-2.5 h-2.5 rounded-full bg-warning/50" aria-hidden="true" />
-            <span className="w-2.5 h-2.5 rounded-full bg-success/50" aria-hidden="true" />
-            <span className="ml-2 px-2.5 py-0.5 rounded bg-elevated text-xs font-mono text-fg-muted">demo_request.json</span>
-          </div>
-
           <form onSubmit={handleSubmit} className="p-6 sm:p-8 flex flex-col gap-6">
             {/* Honeypot — hidden from real users, left off-screen rather than display:none
                 since some bots skip fields that are display:none but still fill this one. */}
@@ -179,11 +135,14 @@ export default function DemoPage() {
               className="absolute -left-[9999px] w-px h-px opacity-0"
             />
 
-            <div className="font-mono text-xs text-fg-disabled leading-relaxed">
-              {comments.map((line) => (
-                <div key={line}>// {line}</div>
+            <ul className="space-y-2">
+              {highlights.map((line) => (
+                <li key={line} className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-4 h-4 text-accent shrink-0 mt-0.5" strokeWidth={1.75} />
+                  <span className="text-fg-muted text-sm leading-relaxed">{line}</span>
+                </li>
               ))}
-            </div>
+            </ul>
 
             {status === 'error' && (
               <div className="flex items-start gap-3 rounded-lg border border-danger-muted bg-danger-subtle px-4 py-3">
@@ -195,14 +154,13 @@ export default function DemoPage() {
               </div>
             )}
 
-            <TextField fieldKey="name" label="your full name" name="name" required value={form.name} onChange={handleChange} placeholder="Jane Doe" />
-            <TextField fieldKey="email" label="work email" name="email" type="email" required value={form.email} onChange={handleChange} placeholder="jane@company.com" />
-            <TextField fieldKey="company" label="company name" name="company" required value={form.company} onChange={handleChange} placeholder="Acme Corp" />
+            <TextField label="Your full name" name="name" required value={form.name} onChange={handleChange} placeholder="Jane Doe" />
+            <TextField label="Work email" name="email" type="email" required value={form.email} onChange={handleChange} placeholder="jane@company.com" />
+            <TextField label="Company name" name="company" required value={form.company} onChange={handleChange} placeholder="Acme Corp" />
 
             <div className="flex flex-col gap-1.5">
               <SelectField
-                fieldKey="country"
-                label="where are you based? (so we know the time difference)"
+                label="Where are you based? (so we know the time difference)"
                 name="country"
                 value={form.country}
                 onChange={handleChange}
@@ -210,50 +168,51 @@ export default function DemoPage() {
                 placeholder="Select a country"
               />
               {form.timezone && (
-                <span className="text-[11px] font-mono text-fg-disabled">
-                  detected timezone: {form.timezone}
+                <span className="text-xs text-fg-disabled">
+                  Detected timezone: {form.timezone}
                 </span>
               )}
             </div>
 
-            <PillSelect fieldKey="team_size" label="how many people on your team?" name="teamSize" options={TEAM_SIZE_OPTIONS} value={form.teamSize} onChange={handlePillChange} />
-            <PillSelect fieldKey="erp_systems" label="how many ERP systems do you run?" name="erpCount" options={ERP_COUNT_OPTIONS} value={form.erpCount} onChange={handlePillChange} />
-            <PillSelect fieldKey="entities" label="how many legal entities?" name="entityCount" options={ENTITY_COUNT_OPTIONS} value={form.entityCount} onChange={handlePillChange} />
+            <PillSelect label="How many ERP systems do you run?" name="erpCount" options={ERP_COUNT_OPTIONS} value={form.erpCount} onChange={handlePillChange} />
+            <PillSelect label="How many legal entities?" name="entityCount" options={ENTITY_COUNT_OPTIONS} value={form.entityCount} onChange={handlePillChange} />
 
-            <div className="grid grid-cols-2 gap-4">
-              <TextField
-                fieldKey="preferred_date"
-                label="best day to call? (optional)"
-                name="preferredDate"
-                type="date"
+            <div className="flex flex-col gap-2">
+              <span className="text-sm font-medium text-fg">Best day &amp; time to call? (optional)</span>
+              <Calendar
                 value={form.preferredDate}
-                onChange={handleChange}
+                onChange={(date) => setForm((prev) => ({ ...prev, preferredDate: date }))}
               />
-              <TextField
-                fieldKey="preferred_time"
-                label="best time? (optional)"
-                name="preferredTime"
-                type="time"
-                value={form.preferredTime}
-                onChange={handleChange}
-              />
+              {form.preferredDate && (
+                <TimeSlotPicker
+                  value={form.preferredTime}
+                  onChange={(time) => setForm((prev) => ({ ...prev, preferredTime: time }))}
+                />
+              )}
+              {form.preferredDate && (
+                <span className="text-xs text-fg-disabled">
+                  Selected:{' '}
+                  {new Date(`${form.preferredDate}T00:00:00`).toLocaleDateString('en-US', {
+                    weekday: 'long',
+                    month: 'long',
+                    day: 'numeric',
+                  })}
+                  {form.preferredTime ? ` at ${form.preferredTime}` : ' — pick a time above'}
+                </span>
+              )}
             </div>
 
             <TextField
-              fieldKey="message"
-              label="anything specific to cover? (optional)"
+              label="Anything specific to cover? (optional)"
               name="message"
               textarea
               rows={3}
               value={form.message}
               onChange={handleChange}
-              placeholder="we consolidate data from multiple systems"
+              placeholder="We consolidate data from multiple systems"
             />
 
             <div className="pt-2">
-              <div className="mb-3">
-                <JsonPreview form={form} />
-              </div>
               <button
                 type="submit"
                 disabled={status === 'submitting'}

@@ -1,10 +1,7 @@
-export default function PillSelect({ fieldKey, label, name, options, value, onChange }) {
+export default function PillSelect({ label, name, options, value, onChange }) {
   return (
     <div className="flex flex-col gap-2">
-      <div className="flex items-baseline gap-2">
-        <span className="font-mono text-xs text-accent">{fieldKey}:</span>
-        <span className="text-xs text-fg-disabled">// {label}</span>
-      </div>
+      <span className="text-sm font-medium text-fg">{label}</span>
       <div className="flex flex-wrap gap-2">
         {options.map((option) => {
           const isActive = value === option
@@ -13,10 +10,10 @@ export default function PillSelect({ fieldKey, label, name, options, value, onCh
               key={option}
               type="button"
               onClick={() => onChange(name, option)}
-              className={`px-3.5 py-2 rounded-md text-sm font-mono border transition-colors ${
+              className={`px-3.5 py-2 rounded-lg text-sm border transition-colors ${
                 isActive
                   ? 'bg-accent-subtle border-accent-muted text-accent'
-                  : 'bg-canvas border-divider-subtle text-fg-muted hover:border-divider-strong hover:text-fg'
+                  : 'bg-canvas/50 border-divider-subtle text-fg-muted hover:border-divider-strong hover:text-fg'
               }`}
             >
               {option}
