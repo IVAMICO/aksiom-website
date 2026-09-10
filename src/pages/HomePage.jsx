@@ -1,10 +1,14 @@
 import Hero from '../components/Hero'
 import TrustedBy from '../components/TrustedBy'
+import OperationalTPSection from '../components/OperationalTPSection'
 import ProblemSection from '../components/ProblemSection'
-import DataQualitySection from '../components/DataQualitySection'
-import SolutionSection from '../components/SolutionSection'
-import HowItWorksDetailed from '../components/HowItWorksDetailed'
+import FoundationSection from '../components/FoundationSection'
+import OperatingPrinciplesStrip from '../components/OperatingPrinciplesStrip'
 import FinalCTA from '../components/FinalCTA'
+
+// HowItWorksDetailed (the "independent AI auditor" section) is intentionally not
+// rendered — it asserts claims (auditor checks every classification, approved
+// decisions become precedent) that aren't yet confirmed live. Re-add once confirmed.
 
 export default function HomePage() {
   return (
@@ -13,15 +17,15 @@ export default function HomePage() {
 
       <TrustedBy />
 
+      <OperationalTPSection />
+
       <div id="problem" className="relative">
         <ProblemSection />
       </div>
 
-      <DataQualitySection />
+      <FoundationSection />
 
-      <SolutionSection />
-
-      <HowItWorksDetailed />
+      <OperatingPrinciplesStrip />
 
       <FinalCTA />
     </>

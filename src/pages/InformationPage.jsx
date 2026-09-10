@@ -1,6 +1,7 @@
 import { motion } from 'motion/react'
-import { Newspaper, Download, Mail } from 'lucide-react'
+import { Download, Mail } from 'lucide-react'
 import { useDocumentTitle } from '../lib/useDocumentTitle'
+import Eyebrow from '../components/Eyebrow'
 
 const facts = [
   { label: 'Founded', value: 'Summer 2026' },
@@ -15,10 +16,7 @@ export default function InformationPage() {
     <div className="pt-32 sm:pt-40 pb-24 sm:pb-32 font-sans">
       <div className="max-w-3xl mx-auto px-6 lg:px-8">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent-subtle border border-accent-muted/40 text-accent text-xs font-medium mb-6">
-            <Newspaper className="w-3.5 h-3.5" />
-            Press &amp; Information
-          </div>
+          <Eyebrow>Press &amp; Information</Eyebrow>
           <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight text-fg mb-6 leading-tight">
             Aksiom press kit
           </h1>

@@ -4,10 +4,11 @@ import { Menu, X } from 'lucide-react'
 import LogoMark from './LogoMark'
 
 const navLinks = [
-  { label: 'The Challenge', href: '/#problem' },
-  { label: 'Platform', href: '/#platform' },
-  { label: 'How It Works', href: '/#how-it-works' },
+  { label: 'Product', href: '/#foundation' },
+  { label: 'How it works', href: '/#otp' },
   { label: 'Pricing', to: '/pricing' },
+  { label: 'Pilot', to: '/pilot' },
+  { label: 'Security', to: '/security' },
 ]
 
 const companyLinks = [
@@ -52,7 +53,7 @@ export default function Navbar() {
             to="/demo"
             className="px-4 py-2 rounded-lg bg-accent text-fg-on-accent text-sm font-medium hover:bg-accent-muted transition-colors"
           >
-            Request Demo
+            See it on your own data
           </Link>
           <button
             type="button"

@@ -3,6 +3,8 @@ import Layout from './components/Layout'
 import HomePage from './pages/HomePage'
 import AboutPage from './pages/AboutPage'
 import PricingPage from './pages/PricingPage'
+import PilotPage from './pages/PilotPage'
+import SecurityPage from './pages/SecurityPage'
 import InformationPage from './pages/InformationPage'
 import DemoPage from './pages/DemoPage'
 import PrivacyPolicyPage from './pages/legal/PrivacyPolicyPage'
@@ -20,6 +22,8 @@ function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/team" element={<Navigate to="/about#team" replace />} />
           <Route path="/pricing" element={<PricingPage />} />
+          <Route path="/pilot" element={<PilotPage />} />
+          <Route path="/security" element={<SecurityPage />} />
           <Route path="/press" element={<InformationPage />} />
           <Route path="/demo" element={<DemoPage />} />
           <Route path="/privacy" element={<PrivacyPolicyPage />} />

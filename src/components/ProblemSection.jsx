@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
-import { Database, Network, AlertCircle } from 'lucide-react'
+import { Database, Network, AlertCircle, AlertTriangle } from 'lucide-react'
 
 const DOTS_COUNT = 48
 const generateDots = () => {
@@ -32,21 +32,27 @@ const generateDots = () => {
 const stages = [
   {
     id: 'extraction',
-    title: 'Millions of ERP Line Items',
+    title: 'Hidden in accounting entries',
     description: 'Every entity pair posts thousands of journal entries a year. Before you can price a single intercompany transaction, you first have to know it exists — and where.',
     icon: Database,
   },
   {
     id: 'taxonomy',
-    title: 'Ambiguous Transaction Types',
-    description: "Most entity pairs allow more than one transfer pricing category. Deciding which one applies to a given line item takes context a spreadsheet formula can't hold.",
+    title: 'Accounting mechanics create noise',
+    description: "Most entity pairs allow more than one transfer pricing category, and not every line item is a priced transaction at all — some is settlement, netting or cash-pooling. Deciding which is which takes context a spreadsheet formula can't hold.",
     icon: Network,
   },
   {
     id: 'reconciliation',
-    title: 'Unauditable Manual Review',
+    title: 'Manual reconstruction',
     description: "Analysts reconciling this by hand can't show their work at scale — no consistent evidence trail, no way to prove the same rule was applied the same way twice.",
     icon: AlertCircle,
+  },
+  {
+    id: 'consequence',
+    title: 'Nobody can trust the number',
+    description: "Pricing, benchmarking, the filing itself — all of it rests on a transaction population nobody actually verified.",
+    icon: AlertTriangle,
   },
 ]
 
@@ -76,9 +82,14 @@ export default function ProblemSection() {
             </span>
             <div className="w-12 h-[1px] bg-accent-muted/30" />
           </div>
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-light text-fg tracking-wide max-w-2xl leading-tight">
-            Analysis starts <span className="text-fg-subtle">long before</span> the analysis itself.
+          <h2 className="text-xl md:text-2xl lg:text-3xl font-light text-fg tracking-wide max-w-2xl leading-tight">
+            Before pricing, benchmarking or documentation, <span className="text-fg-subtle">you first need to know what the transaction is.</span>
           </h2>
+          <p className="text-fg-muted text-sm sm:text-base leading-relaxed max-w-2xl mt-6 font-light">
+            Intercompany activity sits alongside settlements, netting, clearing and FX movements — and
+            the underlying source data isn't always reliable to begin with. Teams still spend too much
+            time reconstructing the transaction population before the actual TP work can begin.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
@@ -140,7 +151,7 @@ export default function ProblemSection() {
             <div className="absolute inset-0 bg-gradient-to-br from-accent-subtle/40 to-transparent" />
 
             <AnimatePresence>
-              {activeStage === 2 && (
+              {(activeStage === 2 || activeStage === 3) && (
                 <motion.div
                   initial={{ top: '0%', opacity: 0 }}
                   animate={{ top: '100%', opacity: [0, 1, 1, 0] }}
@@ -154,8 +165,8 @@ export default function ProblemSection() {
               {dots.map((dot) => {
                 const targetPos = activeStage === 0 ? dot.p0 : activeStage === 1 ? dot.p1 : dot.p2
 
-                const isAnomalyActive = activeStage === 2 && dot.isAnomaly
-                const color = isAnomalyActive ? '#E87878' : activeStage === 1 || activeStage === 2 ? '#235DFE' : '#72778A'
+                const isAnomalyActive = (activeStage === 2 || activeStage === 3) && dot.isAnomaly
+                const color = isAnomalyActive ? '#E87878' : activeStage >= 1 ? '#235DFE' : '#72778A'
                 const shadow = isAnomalyActive ? '0 0 10px rgba(232,120,120,0.6)' : activeStage > 0 ? '0 0 8px rgba(35,93,254,0.4)' : 'none'
 
                 return (
@@ -199,10 +210,11 @@ export default function ProblemSection() {
                 {activeStage === 0 && 'SYSTEM: MULTI_NODE_SCATTER'}
                 {activeStage === 1 && 'SYSTEM: TAXONOMY_ALIGNED'}
                 {activeStage === 2 && <span className="text-danger">ERR_DETECTED: MISMATCH_ROW_42</span>}
+                {activeStage === 3 && <span className="text-danger">UNVERIFIED: DOWNSTREAM_RISK</span>}
               </motion.div>
 
               <div className="flex gap-1">
-                {[0, 1, 2].map((i) => (
+                {[0, 1, 2, 3].map((i) => (
                   <div key={i} className={`h-1 w-4 rounded-full transition-colors duration-500 ${activeStage >= i ? 'bg-accent' : 'bg-divider-strong'}`} />
                 ))}
               </div>

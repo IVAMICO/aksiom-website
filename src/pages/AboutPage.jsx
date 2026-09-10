@@ -1,20 +1,13 @@
 import { motion } from 'motion/react'
-import { Building2, Target, Compass, Users, Mail } from 'lucide-react'
+import { Target, Compass, Building2, Mail } from 'lucide-react'
 import { useDocumentTitle } from '../lib/useDocumentTitle'
+import Eyebrow from '../components/Eyebrow'
 
 const team = [
   { name: 'Vidak Rajovic', title: 'Co-Founder', email: 'vidak@aksiom.ai', photo: '/team/vidak.jpg' },
   { name: 'Vuk Rajovic', title: 'Co-Founder', email: 'vuk@aksiom.ai', photo: '/team/vuk.jpg' },
   { name: 'Milo Rajovic', title: 'Co-Founder', email: 'milo@aksiom.ai', photo: '/team/milo.jpg' },
 ]
-
-function PlaceholderBlock({ children }) {
-  return (
-    <div className="rounded-xl border border-dashed border-divider-strong bg-surface/30 p-5 text-sm text-fg-subtle italic leading-relaxed">
-      {children}
-    </div>
-  )
-}
 
 function Avatar({ name, photo }) {
   if (photo) {
@@ -45,12 +38,9 @@ export default function AboutPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent-subtle border border-accent-muted/40 text-accent text-xs font-medium mb-6">
-            <Building2 className="w-3.5 h-3.5" />
-            About Aksiom
-          </div>
-          <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight text-fg mb-6 leading-tight">
-            Built for teams who classify transfer pricing at scale.
+          <Eyebrow>About Aksiom</Eyebrow>
+          <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight text-fg mb-6 leading-tight">
+            Built for modern transfer pricing teams.
           </h1>
         </motion.div>
 
@@ -60,11 +50,17 @@ export default function AboutPage() {
               <Target className="w-4 h-4 text-fg-muted" strokeWidth={1.75} />
               <h2 className="text-fg text-sm font-semibold uppercase tracking-wider">Our Story</h2>
             </div>
-            <PlaceholderBlock>
-              [Placeholder — replace with 2–3 paragraphs on why Aksiom was founded, the problem you saw in
-              transfer pricing teams, and how the product came to be. This is the section prospects and
-              journalists read first.]
-            </PlaceholderBlock>
+            <div className="text-fg-muted text-sm leading-relaxed space-y-4 max-w-xl">
+              <p>
+                Aksiom was founded around a recurring problem in transfer pricing: specialist teams spend
+                too much time reconstructing transaction data, mappings and decisions before the actual TP
+                work can begin.
+              </p>
+              <p>
+                We are building Aksiom to turn that repeated work into a structured, auditable process —
+                preserving what the team validates instead of starting from scratch every cycle.
+              </p>
+            </div>
           </section>
 
           <section>
@@ -72,9 +68,15 @@ export default function AboutPage() {
               <Compass className="w-4 h-4 text-fg-muted" strokeWidth={1.75} />
               <h2 className="text-fg text-sm font-semibold uppercase tracking-wider">Our Mission</h2>
             </div>
-            <PlaceholderBlock>
-              [Placeholder — one or two sentences stating what Aksiom exists to do, in your own words.]
-            </PlaceholderBlock>
+            <div className="max-w-xl">
+              <h3 className="text-fg text-lg font-semibold mb-2 leading-snug">
+                Build a better foundation for transfer pricing.
+              </h3>
+              <p className="text-fg-muted text-sm leading-relaxed">
+                We turn transaction data, rules and expert decisions into a controlled process that TP
+                teams can trust, reuse and scale.
+              </p>
+            </div>
           </section>
 
           <section>
@@ -103,16 +105,12 @@ export default function AboutPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent-subtle border border-accent-muted/40 text-accent text-xs font-medium mb-6">
-              <Users className="w-3.5 h-3.5" />
-              Meet the Team
-            </div>
-            <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-fg mb-6 leading-tight">
+            <Eyebrow>Meet the Team</Eyebrow>
+            <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-fg mb-6 leading-tight">
               The people behind Aksiom
             </h2>
             <p className="text-fg-muted text-sm leading-relaxed mb-10 max-w-xl">
-              Founded by three brothers in Copenhagen, summer 2026. [Placeholder — a sentence or two on
-              background / what unites the team.]
+              Three founders combining product engineering, tax technology and commercial strategy.
             </p>
             <div className="grid grid-cols-3 gap-4 sm:gap-6">
               {team.map((member, i) => (

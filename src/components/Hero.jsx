@@ -7,10 +7,15 @@ export default function Hero() {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-20 bg-transparent">
 
       {/* Ambient background — a scattered mesh of the logo's triangle-node motif,
-          per Visual Identity 1.0's dark-mode background treatment. */}
-      <div className="absolute inset-0 pointer-events-none z-0 flex items-center justify-center">
+          per Visual Identity 1.0's dark-mode background treatment. Slow drift/breathe
+          keeps the hero from feeling static before the copy even loads. */}
+      <motion.div
+        className="absolute inset-0 pointer-events-none z-0 flex items-center justify-center"
+        animate={{ scale: [1, 1.04, 1], opacity: [0.9, 1, 0.9] }}
+        transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
+      >
         <HeroMeshBackground />
-      </div>
+      </motion.div>
 
       <div className="relative z-10 w-full max-w-5xl mx-auto px-6 lg:px-8 text-center flex flex-col items-center mt-12">
 
@@ -18,14 +23,11 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/[0.02] border border-white/[0.05] mb-8 shadow-[0_0_20px_rgba(255,255,255,0.01)] backdrop-blur-md"
+          className="inline-flex items-center gap-3 mb-8"
         >
-          <div className="flex items-center justify-center relative">
-            <div className="w-1.5 h-1.5 rounded-full bg-accent" />
-            <div className="absolute w-1.5 h-1.5 rounded-full bg-accent blur-[4px] animate-pulse" />
-          </div>
-          <span className="text-[11px] font-medium tracking-[0.2em] text-fg-subtle uppercase">
-            Transfer Pricing Automation
+          <span className="w-[3px] h-4 rounded-sm bg-accent shrink-0" />
+          <span className="text-[11px] font-medium tracking-[0.22em] text-fg-subtle uppercase">
+            Operational Transfer Pricing
           </span>
         </motion.div>
 
@@ -33,15 +35,15 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-          className="text-5xl sm:text-6xl lg:text-7xl font-semibold tracking-tight text-fg leading-[1.05] mb-8"
+          className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-fg leading-[1.1] mb-8"
         >
-          Automate Inter-company <br className="hidden sm:block" />
+          Turn ERP journal entries into <br className="hidden sm:block" />
           <motion.span
             animate={{ backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'] }}
             transition={{ duration: 10, repeat: Infinity, ease: 'linear' }}
             className="text-transparent bg-clip-text bg-gradient-to-r from-accent-muted via-accent to-accent-muted bg-[length:200%_auto]"
           >
-            Transaction Intelligence
+            transfer pricing data you can defend
           </motion.span>
         </motion.h1>
 
@@ -49,9 +51,18 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-          className="text-lg sm:text-xl leading-relaxed text-fg-muted mb-12 font-light max-w-2xl mx-auto"
+          className="text-lg sm:text-xl leading-relaxed text-fg-muted mb-6 font-light max-w-2xl mx-auto"
         >
-          Aksiom automates intercompany transaction classification for transfer pricing — turning millions of ERP journal entries into an audit-ready dataset your team can trust.
+          Aksiom starts at journal-entry level to identify the intercompany transaction population, separate accounting mechanics and classify what remains — with every decision traceable back to source.
+        </motion.p>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
+          className="text-xs font-mono uppercase tracking-widest text-fg-disabled mb-12"
+        >
+          ERP-agnostic by design · Being validated on real multinational ERP data · Gold Partner — TP Minds Asia 2026
         </motion.p>
 
         <motion.div
@@ -64,14 +75,14 @@ export default function Hero() {
             to="/demo"
             className="px-7 py-3 rounded-lg flex items-center justify-center w-full sm:w-auto bg-accent text-fg-on-accent font-medium tracking-wide hover:bg-accent-muted transition-colors"
           >
-            Request a Demo
+            See it on your own data
           </Link>
 
           <a
-            href="#platform"
+            href="#otp"
             className="px-7 py-3 rounded-lg flex items-center justify-center w-full sm:w-auto bg-transparent border border-divider text-fg-muted font-medium tracking-wide hover:border-divider-strong hover:text-fg transition-colors"
           >
-            See the Platform
+            How it works
           </a>
         </motion.div>
 

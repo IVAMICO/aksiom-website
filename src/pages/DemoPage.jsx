@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { motion } from 'motion/react'
-import { Loader2, AlertTriangle, Video, CheckCircle2, CheckCircle } from 'lucide-react'
+import { Loader2, AlertTriangle, CheckCircle2, CheckCircle } from 'lucide-react'
 import { useDocumentTitle } from '../lib/useDocumentTitle'
+import Eyebrow from '../components/Eyebrow'
 import PillSelect from '../components/PillSelect'
 import TextField from '../components/TextField'
 import SelectField from '../components/SelectField'
@@ -17,8 +18,8 @@ const ERP_COUNT_OPTIONS = ['1', '2–5', '6+']
 const ENTITY_COUNT_OPTIONS = ['Under 10', '10–50', '50–200', '200+']
 
 const highlights = [
-  '30-minute walkthrough on your own ERP data',
-  'See the classification funnel and AI audit live',
+  '30-minute walkthrough',
+  'See the transaction population and classification funnel',
   'No commitment — just a conversation',
 ]
 
@@ -103,15 +104,13 @@ export default function DemoPage() {
           transition={{ duration: 0.6 }}
           className="text-center mb-10"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent-subtle border border-accent-muted/40 text-accent text-xs font-medium mb-6">
-            <Video className="w-3.5 h-3.5" />
-            Request a Demo
-          </div>
+          <Eyebrow>Request a Demo</Eyebrow>
           <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight text-fg mb-4 leading-tight">
             See it on your own data
           </h1>
           <p className="text-lg text-fg-muted leading-relaxed">
-            Tell us a bit about your setup and we'll set up time to walk through it together.
+            Tell us a little about your setup. We'll arrange a short walkthrough and show how Aksiom fits
+            your transaction workflow.
           </p>
         </motion.div>
 
@@ -219,7 +218,7 @@ export default function DemoPage() {
                 className="w-full px-6 py-3 rounded-lg bg-accent text-fg-on-accent font-medium hover:bg-accent-muted transition-colors disabled:opacity-60 flex items-center justify-center gap-2"
               >
                 {status === 'submitting' && <Loader2 className="w-4 h-4 animate-spin" />}
-                {status === 'submitting' ? 'Sending…' : 'Request a Demo'}
+                {status === 'submitting' ? 'Sending…' : 'Request a walkthrough'}
               </button>
             </div>
           </form>

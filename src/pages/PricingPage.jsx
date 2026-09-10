@@ -1,10 +1,11 @@
 import { useState } from 'react'
 import { motion } from 'motion/react'
 import { Link } from 'react-router-dom'
-import { Tag, CheckCircle2, Layers, ShieldCheck, Rocket, ChevronDown, TrendingDown } from 'lucide-react'
+import { CheckCircle2, Layers, ShieldCheck, Rocket, ChevronDown, TrendingDown } from 'lucide-react'
 import { useDocumentTitle } from '../lib/useDocumentTitle'
 import HeroMeshBackground from '../components/HeroMeshBackground'
 import FinalCTA from '../components/FinalCTA'
+import Eyebrow from '../components/Eyebrow'
 
 const FEATURE_GROUPS = [
   {
@@ -17,12 +18,12 @@ const FEATURE_GROUPS = [
     ],
   },
   {
-    heading: 'Classification & Audit',
+    heading: 'Transaction Foundation & Review',
     icon: ShieldCheck,
     items: [
-      'The full classification funnel: fixed rules, your manual rules, historical precedent, and AI for the rest',
-      'Built-in data quality checks — integrity, blocker, and coverage',
-      'Audit-ready output with a confidence score on every classification',
+      'Deterministic rules, validated precedent and bounded AI',
+      'Integrity, blocker and coverage checks',
+      'Traceable review and approval history',
     ],
   },
   {
@@ -113,15 +114,12 @@ export default function PricingPage() {
             transition={{ duration: 0.6 }}
             className="text-center max-w-2xl mx-auto mb-14"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent-subtle border border-accent-muted/40 text-accent text-xs font-medium mb-6">
-              <Tag className="w-3.5 h-3.5" />
-              Pricing
-            </div>
+            <Eyebrow>Pricing</Eyebrow>
             <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight text-fg mb-6 leading-tight">
               Two prices. That's it.
             </h1>
             <p className="text-lg text-fg-muted leading-relaxed">
-              No tiers to pick between, no feature gates — and it gets cheaper the bigger your group is.
+              No tiers to compare and no feature gates — just clear pricing that scales with your group.
             </p>
           </motion.div>
 

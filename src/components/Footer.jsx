@@ -5,9 +5,8 @@ const columns = [
   {
     heading: 'PRODUCT',
     links: [
-      { label: 'Data Quality', href: '/#data-quality' },
-      { label: 'Classification Funnel', href: '/#platform' },
-      { label: 'AI Audit', href: '/#how-it-works' },
+      { label: 'How it works', href: '/#otp' },
+      { label: 'The Foundation', href: '/#foundation' },
       { label: 'Pricing', href: '/pricing' },
     ],
   },
@@ -18,6 +17,13 @@ const columns = [
       { label: 'Team', href: '/about#team' },
       { label: 'Press', href: '/press' },
       { label: 'Contact', href: 'mailto:info@aksiom.ai' },
+    ],
+  },
+  {
+    heading: 'RESOURCES',
+    links: [
+      { label: 'Pilot', href: '/pilot' },
+      { label: 'Security', href: '/security' },
     ],
   },
   {
@@ -52,7 +58,7 @@ export default function Footer() {
   return (
     <footer className="border-t border-white/5 py-16 text-sm">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-12 lg:gap-8 mb-16 max-w-2xl">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16 max-w-3xl">
           {columns.map((col) => (
             <div key={col.heading}>
               <h4 className="font-semibold text-fg mb-4">{col.heading}</h4>
