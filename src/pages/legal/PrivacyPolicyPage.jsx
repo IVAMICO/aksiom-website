@@ -2,7 +2,7 @@ import LegalPageLayout from '../../components/LegalPageLayout'
 
 export default function PrivacyPolicyPage() {
   return (
-    <LegalPageLayout title="Privacy Policy" lastUpdated="[Placeholder date]">
+    <LegalPageLayout title="Privacy Policy" lastUpdated="[Placeholder date]" path="/privacy">
       <p>
         This Privacy Policy explains how <strong>[Placeholder — legal entity name]</strong> ("Aksiom," "we,"
         "us") collects, uses, and protects information when you use aksiom.ai and the Aksiom platform (the

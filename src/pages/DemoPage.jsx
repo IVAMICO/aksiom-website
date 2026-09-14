@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { motion } from 'motion/react'
 import { Loader2, AlertTriangle, CheckCircle2, CheckCircle } from 'lucide-react'
-import { useDocumentTitle } from '../lib/useDocumentTitle'
+import { useSEO } from '../lib/useSEO'
 import Eyebrow from '../components/Eyebrow'
 import PillSelect from '../components/PillSelect'
 import TextField from '../components/TextField'
@@ -32,7 +32,12 @@ function detectTimezone() {
 }
 
 export default function DemoPage() {
-  useDocumentTitle('Request a Demo')
+  useSEO({
+    title: 'Request a Demo',
+    description:
+      'Request a live demo of Aksiom and see your own ERP data turned into an audit-ready transfer pricing transaction dataset.',
+    path: '/demo',
+  })
   const [status, setStatus] = useState('idle') // idle | submitting | success | error
   const [form, setForm] = useState({
     name: '',

@@ -2,7 +2,7 @@ import LegalPageLayout from '../../components/LegalPageLayout'
 
 export default function CookiePolicyPage() {
   return (
-    <LegalPageLayout title="Cookie Policy" lastUpdated="[Placeholder date]">
+    <LegalPageLayout title="Cookie Policy" lastUpdated="[Placeholder date]" path="/cookies">
       <p>
         This Cookie Policy explains how <strong>[Placeholder — legal entity name]</strong> uses cookies and
         similar technologies on aksiom.ai.

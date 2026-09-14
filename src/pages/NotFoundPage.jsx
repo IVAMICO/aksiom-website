@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom'
-import { useDocumentTitle } from '../lib/useDocumentTitle'
+import { useSEO } from '../lib/useSEO'
 import Eyebrow from '../components/Eyebrow'
 
 export default function NotFoundPage() {
-  useDocumentTitle('Page Not Found')
+  useSEO({ title: 'Page Not Found', noindex: true })
   return (
     <div className="min-h-[70vh] flex flex-col items-center justify-center text-center px-6 font-sans">
       <Eyebrow>404</Eyebrow>

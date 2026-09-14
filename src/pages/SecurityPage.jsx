@@ -1,6 +1,6 @@
 import { motion } from 'motion/react'
 import { AlertTriangle, Server, Lock, KeyRound, Sparkles, FileCheck, Trash2, Mail } from 'lucide-react'
-import { useDocumentTitle } from '../lib/useDocumentTitle'
+import { useSEO } from '../lib/useSEO'
 import PlaceholderBlock from '../components/PlaceholderBlock'
 import Eyebrow from '../components/Eyebrow'
 
@@ -38,7 +38,12 @@ const sections = [
 ]
 
 export default function SecurityPage() {
-  useDocumentTitle('Security')
+  useSEO({
+    title: 'Security',
+    description:
+      'How Aksiom secures your transfer pricing and ERP transaction data — encryption, access controls, and data handling practices.',
+    path: '/security',
+  })
 
   return (
     <div className="pt-32 sm:pt-40 pb-24 sm:pb-32 font-sans">

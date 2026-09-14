@@ -2,7 +2,7 @@ import LegalPageLayout from '../../components/LegalPageLayout'
 
 export default function GdprPage() {
   return (
-    <LegalPageLayout title="GDPR" lastUpdated="[Placeholder date]">
+    <LegalPageLayout title="GDPR" lastUpdated="[Placeholder date]" path="/gdpr">
       <p>
         <strong>[Placeholder — legal entity name]</strong> is committed to compliance with the EU General
         Data Protection Regulation (GDPR) — and, where applicable, the UK GDPR — for personal data

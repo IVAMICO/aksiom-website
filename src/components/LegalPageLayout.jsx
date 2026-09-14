@@ -1,10 +1,14 @@
 import { motion } from 'motion/react'
 import LegalDraftBanner from './LegalDraftBanner'
 import Eyebrow from './Eyebrow'
-import { useDocumentTitle } from '../lib/useDocumentTitle'
+import { useSEO } from '../lib/useSEO'
 
-export default function LegalPageLayout({ title, lastUpdated, children }) {
-  useDocumentTitle(title)
+export default function LegalPageLayout({ title, lastUpdated, path, children }) {
+  useSEO({
+    title,
+    description: `${title} for Aksiom, the operational transfer pricing platform for intercompany transaction classification.`,
+    path,
+  })
   return (
     <div className="pt-32 sm:pt-40 pb-24 sm:pb-32 font-sans">
       <div className="max-w-2xl mx-auto px-6 lg:px-8">

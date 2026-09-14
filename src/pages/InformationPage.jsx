@@ -1,6 +1,6 @@
 import { motion } from 'motion/react'
 import { Download, Mail } from 'lucide-react'
-import { useDocumentTitle } from '../lib/useDocumentTitle'
+import { useSEO } from '../lib/useSEO'
 import Eyebrow from '../components/Eyebrow'
 
 const facts = [
@@ -11,7 +11,12 @@ const facts = [
 ]
 
 export default function InformationPage() {
-  useDocumentTitle('Press & Information')
+  useSEO({
+    title: 'Press & Information',
+    description:
+      'Press kit, logos, and key facts about Aksiom, the operational transfer pricing platform for intercompany transaction classification.',
+    path: '/press',
+  })
   return (
     <div className="pt-32 sm:pt-40 pb-24 sm:pb-32 font-sans">
       <div className="max-w-3xl mx-auto px-6 lg:px-8">

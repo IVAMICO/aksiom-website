@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { motion } from 'motion/react'
 import { Link } from 'react-router-dom'
 import { CheckCircle2, Layers, ShieldCheck, Rocket, ChevronDown, TrendingDown } from 'lucide-react'
-import { useDocumentTitle } from '../lib/useDocumentTitle'
+import { useSEO } from '../lib/useSEO'
 import HeroMeshBackground from '../components/HeroMeshBackground'
 import FinalCTA from '../components/FinalCTA'
 import Eyebrow from '../components/Eyebrow'
@@ -97,7 +97,12 @@ function FaqItem({ q, a, placeholder }) {
 }
 
 export default function PricingPage() {
-  useDocumentTitle('Pricing')
+  useSEO({
+    title: 'Pricing',
+    description:
+      "See Aksiom's pricing for automated transfer pricing transaction classification — audit-ready intercompany data from any ERP.",
+    path: '/pricing',
+  })
 
   return (
     <div className="relative overflow-hidden font-sans">

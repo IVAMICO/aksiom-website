@@ -15,7 +15,7 @@ import {
   CheckCircle,
   AlertTriangle,
 } from 'lucide-react'
-import { useDocumentTitle } from '../lib/useDocumentTitle'
+import { useSEO } from '../lib/useSEO'
 import Eyebrow from '../components/Eyebrow'
 import HeroMeshBackground from '../components/HeroMeshBackground'
 import TextField from '../components/TextField'
@@ -222,7 +222,12 @@ function GlowOrb({ className, animate: anim, transition }) {
 }
 
 export default function PilotPage() {
-  useDocumentTitle('Pilot')
+  useSEO({
+    title: 'Pilot',
+    description:
+      'Run a pilot on your own ERP data and see how Aksiom classifies intercompany transactions for transfer pricing.',
+    path: '/pilot',
+  })
   const [modalOpen, setModalOpen] = useState(false)
 
   return (

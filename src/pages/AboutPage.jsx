@@ -1,6 +1,6 @@
 import { motion } from 'motion/react'
 import { Target, Compass, Building2, Mail } from 'lucide-react'
-import { useDocumentTitle } from '../lib/useDocumentTitle'
+import { useSEO } from '../lib/useSEO'
 import Eyebrow from '../components/Eyebrow'
 
 const team = [
@@ -28,7 +28,12 @@ function Avatar({ name, photo }) {
 }
 
 export default function AboutPage() {
-  useDocumentTitle('About')
+  useSEO({
+    title: 'About',
+    description:
+      'Meet the team behind Aksiom and why we built ERP-agnostic transaction intelligence for operational transfer pricing.',
+    path: '/about',
+  })
 
   return (
     <div className="pt-32 sm:pt-40 pb-24 sm:pb-32 font-sans">

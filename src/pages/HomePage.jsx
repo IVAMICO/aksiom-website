@@ -5,12 +5,15 @@ import ProblemSection from '../components/ProblemSection'
 import FoundationSection from '../components/FoundationSection'
 import OperatingPrinciplesStrip from '../components/OperatingPrinciplesStrip'
 import FinalCTA from '../components/FinalCTA'
+import { useSEO } from '../lib/useSEO'
 
 // HowItWorksDetailed (the "independent AI auditor" section) is intentionally not
 // rendered — it asserts claims (auditor checks every classification, approved
 // decisions become precedent) that aren't yet confirmed live. Re-add once confirmed.
 
 export default function HomePage() {
+  useSEO({ path: '/' })
+
   return (
     <>
       <Hero />

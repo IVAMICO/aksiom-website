@@ -2,7 +2,7 @@ import LegalPageLayout from '../../components/LegalPageLayout'
 
 export default function TermsOfServicePage() {
   return (
-    <LegalPageLayout title="Terms of Service" lastUpdated="[Placeholder date]">
+    <LegalPageLayout title="Terms of Service" lastUpdated="[Placeholder date]" path="/terms">
       <p>
         These Terms of Service ("Terms") govern access to and use of aksiom.ai and the Aksiom platform (the
         "Service"), provided by <strong>[Placeholder — legal entity name]</strong> ("Aksiom," "we," "us").
