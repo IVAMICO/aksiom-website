@@ -78,7 +78,7 @@ export default function Footer() {
             aksiom.ai
           </Link>
           <div className="text-center md:text-right">
-            <div>© {new Date().getFullYear()} Aksiom.ai. All rights reserved.</div>
+            <div>© {new Date().getFullYear()} Aksiom ApS. All rights reserved.</div>
             <div className="text-xs mt-0.5">Krondalvej 9A, 2610 Rødovre, Denmark</div>
           </div>
         </div>
