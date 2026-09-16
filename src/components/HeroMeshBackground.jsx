@@ -24,7 +24,7 @@ export default function HeroMeshBackground() {
 
       {/* the small node network, anchored to opposite corners */}
       <div
-        className="absolute inset-0 w-full h-full opacity-[0.10]"
+        className="absolute inset-0 w-full h-full opacity-[0.24]"
         style={{
           backgroundImage: 'url(/hero-pattern.svg)',
           backgroundSize: '640px 360px',

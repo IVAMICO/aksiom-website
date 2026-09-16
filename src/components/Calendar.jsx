@@ -23,8 +23,13 @@ function startOfDay(date) {
   return d
 }
 
+// Team is traveling for TP Minds Asia 2026 and can't take calls until
+// they're back — self-obsoletes once this date passes, safe to delete after.
+const FIRST_AVAILABLE_DATE = new Date(2026, 9, 10)
+
 export default function Calendar({ value, onChange }) {
   const today = startOfDay(new Date())
+  const firstAvailable = today < FIRST_AVAILABLE_DATE ? FIRST_AVAILABLE_DATE : today
   const [viewMonth, setViewMonth] = useState(() => {
     const base = value ? parseKey(value) : today
     return new Date(base.getFullYear(), base.getMonth(), 1)
@@ -73,7 +78,7 @@ export default function Calendar({ value, onChange }) {
         {cells.map((date, i) => {
           if (!date) return <div key={`blank-${i}`} />
           const key = toKey(date)
-          const disabled = startOfDay(date) < today
+          const disabled = startOfDay(date) < firstAvailable
           const isSelected = value === key
           const isToday = key === todayKey
           return (
@@ -97,6 +102,12 @@ export default function Calendar({ value, onChange }) {
           )
         })}
       </div>
+      {today < FIRST_AVAILABLE_DATE && (
+        <p className="mt-3 text-xs text-fg-disabled">
+          Our team is traveling for a conference and back to take calls from{' '}
+          {FIRST_AVAILABLE_DATE.toLocaleDateString('en-US', { month: 'long', day: 'numeric' })}.
+        </p>
+      )}
     </div>
   )
 }

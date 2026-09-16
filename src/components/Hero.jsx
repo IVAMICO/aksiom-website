@@ -62,7 +62,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
           className="text-xs font-mono uppercase tracking-widest text-fg-disabled mb-12"
         >
-          ERP-agnostic by design · Being validated on real multinational ERP data · Gold Partner — TP Minds Asia 2026
+          ERP-agnostic by design · Gold Partner — TP Minds Asia 2026
         </motion.p>
 
         <motion.div
