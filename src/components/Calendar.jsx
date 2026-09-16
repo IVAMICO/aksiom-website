@@ -23,6 +23,11 @@ function startOfDay(date) {
   return d
 }
 
+function isWeekend(date) {
+  const day = date.getDay()
+  return day === 0 || day === 6
+}
+
 // Team is traveling for TP Minds Asia 2026 and can't take calls until
 // they're back — self-obsoletes once this date passes, safe to delete after.
 const FIRST_AVAILABLE_DATE = new Date(2026, 9, 10)
@@ -78,7 +83,7 @@ export default function Calendar({ value, onChange }) {
         {cells.map((date, i) => {
           if (!date) return <div key={`blank-${i}`} />
           const key = toKey(date)
-          const disabled = startOfDay(date) < firstAvailable
+          const disabled = startOfDay(date) < firstAvailable || isWeekend(date)
           const isSelected = value === key
           const isToday = key === todayKey
           return (
