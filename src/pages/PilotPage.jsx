@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
-import { Link } from 'react-router-dom'
 import {
   FileText,
   Database,
@@ -471,13 +470,6 @@ export default function PilotPage() {
               </span>
               NDA before data transfer. Data handling and access agreed upfront.
             </span>
-            <Link
-              to="/security"
-              className="inline-flex items-center gap-1 text-accent text-sm font-medium hover:text-accent-muted transition-colors shrink-0"
-            >
-              Security &amp; data handling
-              <ArrowRight className="w-3.5 h-3.5" />
-            </Link>
           </motion.div>
         </div>
       </section>

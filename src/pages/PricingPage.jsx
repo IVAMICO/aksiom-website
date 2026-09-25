@@ -30,7 +30,7 @@ const FEATURE_GROUPS = [
     heading: 'Getting Live',
     icon: Rocket,
     items: [
-      'Live in 8–10 weeks, guided by Aksiom the whole way',
+      'Live in 1–4 weeks, guided by Aksiom the whole way',
       'Seven of eight setup requirements already exist in your stack today',
       'Kickoff, configuration workshops, and calibration included',
     ],

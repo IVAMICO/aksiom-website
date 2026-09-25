@@ -1,5 +1,4 @@
 import Hero from '../components/Hero'
-import TrustedBy from '../components/TrustedBy'
 import OperationalTPSection from '../components/OperationalTPSection'
 import ProblemSection from '../components/ProblemSection'
 import FoundationSection from '../components/FoundationSection'
@@ -10,6 +9,9 @@ import { useSEO } from '../lib/useSEO'
 // HowItWorksDetailed (the "independent AI auditor" section) is intentionally not
 // rendered — it asserts claims (auditor checks every classification, approved
 // decisions become precedent) that aren't yet confirmed live. Re-add once confirmed.
+//
+// TrustedBy (the "Built for finance and tax teams at" logo strip) is also not
+// rendered — it only had placeholder company names. Re-add once real clients can be shown.
 
 export default function HomePage() {
   useSEO({ path: '/' })
@@ -17,8 +19,6 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-
-      <TrustedBy />
 
       <OperationalTPSection />
 

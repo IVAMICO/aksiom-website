@@ -1,3 +1,6 @@
+// Unpublished 2026-09-25: route removed from App.jsx and links removed from nav,
+// footer, Pilot page and sitemap. Content kept here so the page can be re-enabled later.
+
 import { motion } from 'motion/react'
 import { AlertTriangle, Server, Lock, KeyRound, Sparkles, FileCheck, Trash2, Mail } from 'lucide-react'
 import { useSEO } from '../lib/useSEO'

@@ -8,7 +8,6 @@ const navLinks = [
   { label: 'How it works', href: '/#otp' },
   { label: 'Pricing', to: '/pricing' },
   { label: 'Pilot', to: '/pilot' },
-  { label: 'Security', to: '/security' },
 ]
 
 const companyLinks = [

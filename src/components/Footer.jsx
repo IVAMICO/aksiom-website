@@ -23,7 +23,6 @@ const columns = [
     heading: 'RESOURCES',
     links: [
       { label: 'Pilot', href: '/pilot' },
-      { label: 'Security', href: '/security' },
     ],
   },
   {
